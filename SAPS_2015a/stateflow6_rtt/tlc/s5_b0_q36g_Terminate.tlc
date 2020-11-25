@@ -1,0 +1,74 @@
+%implements s5_b0_q36g_Terminate "C"
+
+%function Terminate(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcTerminateFcnOfS5B1 = OpaqueTLCBlockFcn("Terminate", 5, 1, 2, 2)
+%assign tlcTerminateFcnOfS5B2 = OpaqueTLCBlockFcn("Terminate", 5, 2, 2, 2)
+/* Terminate for S-Function (ev3_ultrasonic_sensor): '<Root>/Ultrasonic Sensor' */
+terminateUltrasonicSensor(1U);
+/* Terminate for S-Function (ev3_encoder): '<Root>/Encoder' */
+terminateEncoder(1U);
+/* Terminate for S-Function (ev3_motor): '<S2>/Motor' */
+terminateMotor(1U, 2U);
+%<tlcTerminateFcnOfS5B1>\
+%<tlcTerminateFcnOfS5B2>\
+%assign   Terminate_open_sfcn_inserted_server_5_20 = ""
+%openfile Terminate_open_sfcn_inserted_server_5_20
+
+/* Terminate for S-Function (sfun_inserted_server): '<Root>/sfcn_inserted_server' incorporates:
+ *  Terminate for SubSystem: '<Root>/Object Detection'
+ */
+%closefile Terminate_open_sfcn_inserted_server_5_20
+
+%assign    Terminate_body_sfcn_inserted_server_5_20 = ""
+%openfile  Terminate_body_sfcn_inserted_server_5_20
+
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[2], "Terminate",0)
+%<SLibCGIRGenReusableSysCall("ObjDetn_Term", [], 2, 0, 17, 0, 17, 5)>\
+
+%endif
+%closefile Terminate_body_sfcn_inserted_server_5_20
+
+%assign    Terminate_close_sfcn_inserted_server_5_20 = ""
+%openfile  Terminate_close_sfcn_inserted_server_5_20
+
+/* End of Terminate for S-Function (sfun_inserted_server): '<Root>/sfcn_inserted_server' */
+%closefile Terminate_close_sfcn_inserted_server_5_20
+%<SLibCG_DumpSSCode(Terminate_open_sfcn_inserted_server_5_20, Terminate_body_sfcn_inserted_server_5_20, Terminate_close_sfcn_inserted_server_5_20)>
+
+
+%assign   Terminate_open_sfcn_inserted_server1_5_22 = ""
+%openfile Terminate_open_sfcn_inserted_server1_5_22
+
+/* Terminate for S-Function (sfun_inserted_server): '<Root>/sfcn_inserted_server1' incorporates:
+ *  Terminate for SubSystem: '<Root>/Parking Space Detection'
+ */
+%closefile Terminate_open_sfcn_inserted_server1_5_22
+
+%assign    Terminate_body_sfcn_inserted_server1_5_22 = ""
+%openfile  Terminate_body_sfcn_inserted_server1_5_22
+
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[4], "Terminate",0)
+%<SLibCGIRGenReusableSysCall("ParkDetn_Term", [], 4, 0, 17, 0, 17, 5)>\
+
+%endif
+%closefile Terminate_body_sfcn_inserted_server1_5_22
+
+%assign    Terminate_close_sfcn_inserted_server1_5_22 = ""
+%openfile  Terminate_close_sfcn_inserted_server1_5_22
+
+/* End of Terminate for S-Function (sfun_inserted_server): '<Root>/sfcn_inserted_server1' */
+%closefile Terminate_close_sfcn_inserted_server1_5_22
+%<SLibCG_DumpSSCode(Terminate_open_sfcn_inserted_server1_5_22, Terminate_body_sfcn_inserted_server1_5_22, Terminate_close_sfcn_inserted_server1_5_22)>
+
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Terminate(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(2, 2, fcnProtoType)>
+%endfunction

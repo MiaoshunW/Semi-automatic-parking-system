@@ -1,0 +1,1 @@
+To open the whole code generation the folder must be copied the in that folder the file named "saps_3_0_codegen_rpt.html" has to opened.

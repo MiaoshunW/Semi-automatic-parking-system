@@ -1,0 +1,8 @@
+%implements s5_b0_q36g_ModuleConstants "C"
+
+%function ModuleConstants(block) Output
+
+
+/* Named constants for Chart: '<Root>/Chart' */
+#define stateflow6_CALL_EVENT_g (-1)
+%endfunction

@@ -1,0 +1,90 @@
+%implements s5_b0_q36g_0_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+real_T rtb_rearmotor;
+%closefile localVarDecl
+%assign tlcOutputsFcnOfS2B1 = OpaqueTLCBlockFcn("Outputs", 2, 1, 0, 1)
+%assign tlcOutputsFcnOfS2B2 = OpaqueTLCBlockFcn("Outputs", 2, 2, 0, 1)
+%<SLibGenerateExtModeOutput(system)>
+/* DataTypeConversion: '<S3>/Data Type Conversion1' incorporates:
+ *  SignalConversion: '<S3>/TmpSignal ConversionAtEncOutport1'
+ */
+stateflow6_B.DataTypeConversion1_ao = rtu_Enc;
+/* DataTypeConversion: '<S3>/Data Type Conversion' incorporates:
+ *  SignalConversion: '<S3>/TmpSignal ConversionAtSnsrOutport1'
+ */
+stateflow6_B.DataTypeConversion_h = rtu_Snsr;
+/* MATLAB Function: '<S3>/MATLAB Function' incorporates:
+ *  SignalConversion: '<S3>/TmpSignal ConversionAtinputOutport1'
+ */
+/* MATLAB Function 'Object Detection/MATLAB Function': '<S5>:1' */
+/* d = z */
+/* u = 0; %<"\%Encoder reset"> */
+/* x = w; */
+/* lenght=0; */
+/* reset1=0; */
+/* state2=0; */
+if ((stateflow6_B.DataTypeConversion_h > 4.0) && (stateflow6_B.DataTypeConversion_h <= 24.0)) {
+    /* '<S5>:1:9' */
+    /* '<S5>:1:10' */
+    rtb_rearmotor = rtu_input;
+    /*      if((sensor_input-w)>2)|| ((sensor_input-w)<-2) */
+    /*          rearmotor = motor_input - 15; */
+    /*      elseif(sensor_input>4)&&(sensor_input<=20) */
+    /*          rearmotor = motor_input-5; */
+    /*      end */
+    /*     if (Enc>=30)&&(Enc<=32) */
+    /*        length1=30; */
+    /*         rearmotor=0; */
+    /*         reset1=1; */
+    /*    state2=1;         */
+    /*   end */
+    /* elseif(sensor_input>20)&&(sensor_input<=35) */
+    /*    rearmotor=motor_input; */
+    /* else(sensor_input>24)&&(sensor_input<=61) */
+    /*    x = u; */
+    /*   rearmotor=motor_input-10; */
+    /*  u=1;     */
+    /* if(sensor_input<=20) */
+    /*     rearmotor=0;    */
+    /* else((sensor_input-z)>2)||((sensor_input-z)<-2) */
+    /*  rearmotor=0; */
+} else {
+    /* '<S5>:1:33' */
+    rtb_rearmotor = rtu_input - 10.0;
+    /* state2=0; */
+}
+/* End of MATLAB Function: '<S3>/MATLAB Function' */
+
+/* SignalConversion: '<S3>/TmpSignal ConversionAtMotInport1' */
+*rty_Mot = rtb_rearmotor;
+%<tlcOutputsFcnOfS2B1>\
+%<tlcOutputsFcnOfS2B2>\
+stateflow6_DW.ObjectDetection_SubsysRanBC = 4;
+%closefile cfgTxt
+%if !%<SLibCG_ArgAccessed(0, 1, 3)>
+%<SLibUnusedParameter("rtu_ww")>
+%endif
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ObjDetn(\
+%assign comma = ""
+%<comma>real_T rtu_input\
+%assign comma = ", "
+%<comma>real_T rtu_Snsr\
+%assign comma = ", "
+%<comma>real_T rtu_Enc\
+%assign comma = ", "
+%<comma>real_T rtu_ww\
+%assign comma = ", "
+%<comma>real_T *rty_Mot\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction

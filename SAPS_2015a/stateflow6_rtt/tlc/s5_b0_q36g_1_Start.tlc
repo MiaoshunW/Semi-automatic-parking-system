@@ -1,0 +1,19 @@
+%implements s5_b0_q36g_1_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS4B1 = OpaqueTLCBlockFcn("Start", 4, 1, 1, 0)
+%assign tlcStartFcnOfS4B2 = OpaqueTLCBlockFcn("Start", 4, 2, 1, 0)
+%<tlcStartFcnOfS4B1>\
+%<tlcStartFcnOfS4B2>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ParkDetn_Start(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 0, fcnProtoType)>
+%endfunction

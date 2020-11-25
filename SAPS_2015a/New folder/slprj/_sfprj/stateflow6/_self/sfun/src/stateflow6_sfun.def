@@ -1,0 +1,3 @@
+LIBRARY stateflow6_sfun.mexw64
+EXPORTS
+mexFunction

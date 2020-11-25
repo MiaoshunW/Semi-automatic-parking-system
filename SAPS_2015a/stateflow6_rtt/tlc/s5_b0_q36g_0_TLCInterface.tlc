@@ -1,0 +1,102 @@
+%implements s5_b0_q36g_0_TLCInterface "C"
+
+%function getInputAddr_2_1_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&stateflow6_B.DataTypeConversion_h"
+%endfunction
+
+%function getInput_2_1_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "stateflow6_B.DataTypeConversion_h"
+%endfunction
+
+%function getDWorkAddr_2_1_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&stateflow6_DW.Scope_PWORK_c"
+%endfunction
+
+%function getDWork_2_1_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "stateflow6_DW.Scope_PWORK_c"
+%endfunction
+
+%function getInputAddr_2_2_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&stateflow6_B.DataTypeConversion_h"
+%endfunction
+
+%function getInput_2_2_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "stateflow6_B.DataTypeConversion_h"
+%endfunction
+
+%function getDWorkAddr_2_2_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&stateflow6_DW.ToWorkspace2_PWORK_k"
+%endfunction
+
+%function getDWork_2_2_0_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "stateflow6_DW.ToWorkspace2_PWORK_k"
+%endfunction
+
+%function getInputAddr_2_1_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&stateflow6_B.DataTypeConversion_h"
+%endfunction
+
+%function getInput_2_1_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "stateflow6_B.DataTypeConversion_h"
+%endfunction
+
+%function getDWorkAddr_2_1_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&stateflow6_DW.Scope_PWORK_c"
+%endfunction
+
+%function getDWork_2_1_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "stateflow6_DW.Scope_PWORK_c"
+%endfunction
+
+%function getInputAddr_2_2_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&stateflow6_B.DataTypeConversion_h"
+%endfunction
+
+%function getInput_2_2_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "stateflow6_B.DataTypeConversion_h"
+%endfunction
+
+%function getDWorkAddr_2_2_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&stateflow6_DW.ToWorkspace2_PWORK_k"
+%endfunction
+
+%function getDWork_2_2_0_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "stateflow6_DW.ToWorkspace2_PWORK_k"
+%endfunction
+
+%function getInputAddr_2_2_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&stateflow6_B.DataTypeConversion_h"
+%endfunction
+
+%function getInput_2_2_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "stateflow6_B.DataTypeConversion_h"
+%endfunction
+
+%function getDWorkAddr_2_2_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&stateflow6_DW.ToWorkspace2_PWORK_k"
+%endfunction
+
+%function getDWork_2_2_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "stateflow6_DW.ToWorkspace2_PWORK_k"
+%endfunction
+

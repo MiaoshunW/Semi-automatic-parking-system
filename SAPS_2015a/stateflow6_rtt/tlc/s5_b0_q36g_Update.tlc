@@ -1,0 +1,21 @@
+%implements s5_b0_q36g_Update "C"
+
+%function Update(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+/* Update for Delay: '<Root>/Delay1' */
+stateflow6_DW.Delay1_DSTATE = stateflow6_B.DataTypeConversion3;
+/* Update for Delay: '<Root>/Delay2' */
+stateflow6_DW.Delay2_DSTATE = stateflow6_B.DataTypeConversion1;
+/* Update for Delay: '<Root>/Delay' */
+stateflow6_DW.Delay_DSTATE = stateflow6_B.state_nr;
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(2, 1, fcnProtoType)>
+%endfunction

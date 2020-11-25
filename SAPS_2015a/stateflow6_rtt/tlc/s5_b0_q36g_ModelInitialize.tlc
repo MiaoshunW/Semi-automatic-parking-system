@@ -1,0 +1,97 @@
+%implements s5_b0_q36g_ModelInitialize "C"
+
+%function ModelInitialize(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS5B1 = OpaqueTLCBlockFcn("Start", 5, 1, 2, 3)
+%assign tlcStartFcnOfS5B2 = OpaqueTLCBlockFcn("Start", 5, 2, 2, 3)
+%assign tlcStartFcnOfS5B3 = OpaqueTLCBlockFcn("Start", 5, 3, 2, 3)
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+/* Start for Constant: '<Root>/Constant2' */
+stateflow6_B.Constant2 = stateflow6_P.Constant2_Value;
+/* Start for S-Function (ev3_ultrasonic_sensor): '<Root>/Ultrasonic Sensor' */
+initUltrasonicSensor(1U);
+/* Start for S-Function (ev3_encoder): '<Root>/Encoder' */
+initEncoder(1U);
+/* Start for Constant: '<Root>/Constant1' */
+stateflow6_B.Constant1 = stateflow6_P.ObjLength;
+/* Start for Constant: '<Root>/Constant' */
+stateflow6_B.Constant = stateflow6_P.ParkLength;
+/* Start for S-Function (ev3_motor): '<S2>/Motor' */
+initMotor(1U);
+%<tlcStartFcnOfS5B1>\
+%<tlcStartFcnOfS5B2>\
+%<tlcStartFcnOfS5B3>\
+%assign   Start_open_sfcn_inserted_server_5_20 = ""
+%openfile Start_open_sfcn_inserted_server_5_20
+
+/* Start for S-Function (sfun_inserted_server): '<Root>/sfcn_inserted_server' incorporates:
+ *  Start for SubSystem: '<Root>/Object Detection'
+ */
+%closefile Start_open_sfcn_inserted_server_5_20
+
+%assign    Start_body_sfcn_inserted_server_5_20 = ""
+%openfile  Start_body_sfcn_inserted_server_5_20
+
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[2], "Start",0)
+%<SLibCGIRGenReusableSysCall("ObjDetn_Start", [], 2, 0, 0, 0, 18, 5)>\
+
+%endif
+%closefile Start_body_sfcn_inserted_server_5_20
+
+%assign    Start_close_sfcn_inserted_server_5_20 = ""
+%openfile  Start_close_sfcn_inserted_server_5_20
+
+/* End of Start for S-Function (sfun_inserted_server): '<Root>/sfcn_inserted_server' */
+%closefile Start_close_sfcn_inserted_server_5_20
+%<SLibCG_DumpSSCode(Start_open_sfcn_inserted_server_5_20, Start_body_sfcn_inserted_server_5_20, Start_close_sfcn_inserted_server_5_20)>
+
+
+%assign   Start_open_sfcn_inserted_server1_5_22 = ""
+%openfile Start_open_sfcn_inserted_server1_5_22
+
+/* Start for S-Function (sfun_inserted_server): '<Root>/sfcn_inserted_server1' incorporates:
+ *  Start for SubSystem: '<Root>/Parking Space Detection'
+ */
+%closefile Start_open_sfcn_inserted_server1_5_22
+
+%assign    Start_body_sfcn_inserted_server1_5_22 = ""
+%openfile  Start_body_sfcn_inserted_server1_5_22
+
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[4], "Start",0)
+%<SLibCGIRGenReusableSysCall("ParkDetn_Start", [], 4, 0, 0, 0, 18, 5)>\
+
+%endif
+%closefile Start_body_sfcn_inserted_server1_5_22
+
+%assign    Start_close_sfcn_inserted_server1_5_22 = ""
+%openfile  Start_close_sfcn_inserted_server1_5_22
+
+/* End of Start for S-Function (sfun_inserted_server): '<Root>/sfcn_inserted_server1' */
+%closefile Start_close_sfcn_inserted_server1_5_22
+%<SLibCG_DumpSSCode(Start_open_sfcn_inserted_server1_5_22, Start_body_sfcn_inserted_server1_5_22, Start_close_sfcn_inserted_server1_5_22)>
+
+
+/* InitializeConditions for Delay: '<Root>/Delay1' */
+stateflow6_DW.Delay1_DSTATE = stateflow6_P.Delay1_InitialCondition;
+/* InitializeConditions for Delay: '<Root>/Delay2' */
+stateflow6_DW.Delay2_DSTATE = stateflow6_P.Delay2_InitialCondition;
+/* InitializeConditions for Chart: '<Root>/Chart' */
+stateflow6_DW.sfEvent = stateflow6_CALL_EVENT_g;
+stateflow6_DW.temporalCounter_i1 = 0U;
+stateflow6_DW.is_active_c3_stateflow6 = 0U;
+stateflow6_B.ChartMode = ChartModeType_None;
+/* InitializeConditions for Delay: '<Root>/Delay' */
+stateflow6_DW.Delay_DSTATE = stateflow6_P.Delay_InitialCondition;
+%<SLibInsertInitPeriodicCStatesFcn(system)>
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ModelInitialize(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(2, 3, fcnProtoType)>
+%endfunction

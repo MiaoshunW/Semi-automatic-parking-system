@@ -1,0 +1,90 @@
+%implements s5_b0_q36g_1_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+real_T rtb_rearmotor;
+%closefile localVarDecl
+%assign tlcOutputsFcnOfS4B1 = OpaqueTLCBlockFcn("Outputs", 4, 1, 1, 1)
+%assign tlcOutputsFcnOfS4B2 = OpaqueTLCBlockFcn("Outputs", 4, 2, 1, 1)
+%<SLibGenerateExtModeOutput(system)>
+/* DataTypeConversion: '<S4>/Data Type Conversion1' incorporates:
+ *  SignalConversion: '<S4>/TmpSignal ConversionAtEncOutport1'
+ */
+stateflow6_B.DataTypeConversion1_a = rtu_Enc;
+/* DataTypeConversion: '<S4>/Data Type Conversion' incorporates:
+ *  SignalConversion: '<S4>/TmpSignal ConversionAtSnsrOutport1'
+ */
+stateflow6_B.DataTypeConversion = rtu_Snsr;
+/* MATLAB Function: '<S4>/MATLAB Function' incorporates:
+ *  SignalConversion: '<S4>/TmpSignal ConversionAtinputOutport1'
+ */
+/* MATLAB Function 'Parking Space Detection/MATLAB Function': '<S6>:1' */
+/* d = z */
+/* u = 0; %<"\%Encoder reset"> */
+/*  x = w; */
+/*  length2=0; */
+/* reset11=0; */
+/* state3=0; */
+if ((stateflow6_B.DataTypeConversion > 24.0) && (stateflow6_B.DataTypeConversion <= 60.0)) {
+    /* '<S6>:1:9' */
+    /* '<S6>:1:10' */
+    rtb_rearmotor = rtu_input - 15.0;
+    /*      if((sensor_input-w)>2)||((sensor_input-w)<-2) */
+    /*          rearmotor = motor_input - 15; */
+    /*      elseif(sensor_input>4)&&(sensor_input<=20) */
+    /*          rearmotor = motor_input-15; */
+    /*       end */
+    /*   if (Enc>=73)&&(Enc<=74) */
+    /*      length2=Enc; */
+    /*        rearmotor=0; */
+    /*         reset11=1; */
+    /*     state3=1;         */
+    /* end */
+    /* elseif(sensor_input>20)&&(sensor_input<=35) */
+    /*    rearmotor=motor_input; */
+    /* else(sensor_input>24)&&(sensor_input<=61) */
+    /*    x = u; */
+    /*   rearmotor=motor_input-10; */
+    /*  u=1;     */
+    /* if(sensor_input<=20) */
+    /*     rearmotor=0;    */
+    /* else((sensor_input-z)>2)||((sensor_input-z)<-2) */
+    /*  rearmotor=0; */
+} else {
+    /* '<S6>:1:34' */
+    rtb_rearmotor = rtu_input - 10.0;
+    /* state3=0; */
+}
+/* End of MATLAB Function: '<S4>/MATLAB Function' */
+
+/* SignalConversion: '<S4>/TmpSignal ConversionAtMotInport1' */
+*rty_Mot = rtb_rearmotor;
+%<tlcOutputsFcnOfS4B1>\
+%<tlcOutputsFcnOfS4B2>\
+stateflow6_DW.ParkingSpaceDetection_SubsysRan = 4;
+%closefile cfgTxt
+%if !%<SLibCG_ArgAccessed(1, 1, 3)>
+%<SLibUnusedParameter("rtu_ww")>
+%endif
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ParkDetn(\
+%assign comma = ""
+%<comma>real_T rtu_input\
+%assign comma = ", "
+%<comma>real_T rtu_Snsr\
+%assign comma = ", "
+%<comma>real_T rtu_Enc\
+%assign comma = ", "
+%<comma>real_T rtu_ww\
+%assign comma = ", "
+%<comma>real_T *rty_Mot\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 1, fcnProtoType)>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction

@@ -1,0 +1,16 @@
+%implements s5_b0_q36g_0_BlockInstanceSetup "C"
+
+%function BlockInstanceSetup(block, system) Output
+%% Subsystems with iterators in IR:
+%% TLC Block Registration buffer:
+%<LibAddToCommonIncludes("driver_ev3.h")>
+%<LibAddToCommonIncludes("driver_ev3.h")>
+%<LibAddToCommonIncludes("driver_ev3.h")>
+%<LibAddToCommonIncludes("driver_ev3.h")>
+%<LibAddToCommonIncludes("driver_ev3.h")>
+%<LibAddToCommonIncludes("driver_ev3.h")>
+%<LibAddToCommonIncludes("driver_ev3.h")>
+%<LibAddToCommonIncludes("driver_ev3.h")>
+%<LibAddToCommonIncludes("driver_ev3.h")>
+%% END  Block Registration buffer
+%endfunction
